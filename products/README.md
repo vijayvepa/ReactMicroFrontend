@@ -3,7 +3,6 @@
 ## WebPack
 - WebPack combines multiple dependencies into a single file.
 >  node_modules/** + index.js -> WebPack -> dist/main.js
-<<<<<<< HEAD
 - Similar to maven java and pom.xml
 
 Configure the bundle in [webpack.config.js](webpack.config.js)
@@ -55,10 +54,14 @@ npm run start
 ![alt text](image-1.png)
 
 
-=======
+- Add a table container to html
+- Update the container from javascript
 
-```shell
-npm run start 
---> webpack
+```js
+
+document.querySelector('#products-table').innerHTML = products;
 ```
->>>>>>> 853ae2b25ab7366e3049f50586db127f2c055f35
+
+- Now the products are displayed on the page
+
+![alt text](image-2.png)

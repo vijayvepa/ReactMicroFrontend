@@ -8,11 +8,11 @@ for (let i = 0; i < 10; i++) {
 
 	products += `
 		<tr>
-			<td>${name}</td>
+			<td><b>${name}</b></td>
 			<td>${price}</td>
 		</tr>
 	`;
 }
 
 console.log(products);
-
+document.querySelector('#products-table').innerHTML = products;
