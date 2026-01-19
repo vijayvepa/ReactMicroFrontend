@@ -65,3 +65,32 @@ document.querySelector('#products-table').innerHTML = products;
 - Now the products are displayed on the page
 
 ![alt text](image-2.png)
+
+## Expose Relevant Files to Container
+
+- Webpack.js
+- import ModuleFederationPlugin
+- expose index.js as ProductsIndex
+```js
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+module.exports = {
+	mode: 'development',
+	devServer: {
+		port: 4101
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: './public/index.html'
+		}),
+		new ModuleFederationPlugin({
+			name: 'products',
+			filename: 'remoteEntry.js',
+			exposes: {
+				'./ProductsIndex': './src/index.js'
+			},
+		})
+	]
+}
+
+```
