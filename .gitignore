@@ -1,2 +1,2 @@
-products/dist/
-products/node_modules/
+**/dist/
+**/node_modules/
