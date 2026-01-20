@@ -14,6 +14,7 @@ module.exports = {
 			remotes: {
 				products: 'products@http://localhost:4101/remoteEntry.js',
 				items: 'items@http://localhost:4103/remoteEntry.js',
+				cart: 'cart@http://localhost:4102/remoteEntry.js',
 			}
 		}),
 

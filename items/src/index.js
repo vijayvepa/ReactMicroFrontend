@@ -1,18 +1,6 @@
 import faker from 'faker';
 
-let products = '';
+const cartText = `<tr><td>You have ${faker.random.number()} items in your cart</td></tr>`
 
-for (let i = 0; i < 10; i++) {
-	const name = faker.commerce.productName();
-	const price = faker.commerce.price();
-
-	products += `
-		<tr>
-			<td><b>${name}</b></td>
-			<td>${price}</td>
-		</tr>
-	`;
-}
-
-console.log(products);
-document.querySelector('#items-table').innerHTML = products;
+console.log(cartText);
+document.querySelector('#items-table').innerHTML = cartText;
