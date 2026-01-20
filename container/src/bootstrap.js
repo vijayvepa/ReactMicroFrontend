@@ -1,2 +1,3 @@
-import 'products/ProductsIndex' //--> remoteName/remoteResource
-console.log('Container!')
+import 'products/ProductsIndex'; //--> remoteName/remoteResource
+import 'items/ItemsIndex';
+console.log('Container!');
