@@ -1,18 +1,31 @@
 import faker from 'faker';
 
-let products = '';
+const mount = el => {
+	let products = '';
 
-for (let i = 0; i < 10; i++) {
-	const name = faker.commerce.productName();
-	const price = faker.commerce.price();
+	for (let i = 0; i < 10; i++) {
+		const name = faker.commerce.productName();
+		const price = faker.commerce.price();
 
-	products += `
+		products += `
 		<tr>
 			<td><b>${name}</b></td>
 			<td>${price}</td>
 		</tr>
 	`;
+	}
+
+	console.log(products);
+	el.innerHTML = products;
 }
 
-console.log(products);
-document.querySelector('#products-table').innerHTML = products;
+console.log('env' + process.env.NODE_ENV)
+if (process.env.NODE_ENV === 'development') {
+	const el = document.querySelector('#products-table');
+	if (el) {
+		mount(el);
+	}
+}
+
+export { mount };
+
