@@ -1,6 +1,17 @@
 import faker from 'faker';
 
-const cartText = `<div>You have ${faker.random.number()} items in your cart</div>`
+const mountCart = el => {
+	const cartText = `<div>You have ${faker.random.number()} items in your cart</div>`
 
-console.log(cartText);
-document.querySelector('#cart-div').innerHTML = cartText;
+	console.log(cartText);
+	el.innerHTML = cartText;
+}
+
+if (process.env.NODE_ENV === 'development') {
+	const el = document.querySelector('#cart-table');
+	if (el) {
+		mountCart(el);
+	}
+}
+
+export { mountCart };
